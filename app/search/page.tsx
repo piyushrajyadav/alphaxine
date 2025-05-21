@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -151,4 +151,10 @@ const SearchResultsPage = () => {
   );
 };
 
-export default SearchResultsPage; 
+export default function SearchPageWithSuspense() {
+  return (
+    <Suspense>
+      <SearchResultsPage />
+    </Suspense>
+  );
+} 
