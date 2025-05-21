@@ -1,0 +1,19 @@
+/* Force gray backgrounds on specific pages */
+
+.force-gray-bg,
+.force-gray-bg section,
+.force-gray-bg div {
+  background-color: #f9fafb !important; /* Tailwind gray-50 */
+}
+
+.force-gray-bg h1,
+.force-gray-bg h2,
+.force-gray-bg h3 {
+  color: #dc2626 !important; /* Tailwind red-600 */
+}
+
+/* Add shadow to cards while keeping gray background */
+.force-gray-bg .card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #f9fafb !important;
+} 

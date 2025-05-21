@@ -24,16 +24,16 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${isSticky ? 'sticky-menu' : ''}`}>
-      <div className="container mx-auto px-4 py-3">
+    <header className={`w-full py-4 ${isSticky ? 'fixed top-0 left-0 right-0 bg-white shadow-md z-50 animate-slideInDown' : ''}`}>
+      <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <div className="logo">
+          <div className="logo relative h-16 w-48">
             <Link href="/">
               <Image 
-                src="/images/logo.webp" 
+                src="/images/logo.svg" 
                 alt="Alphaxine Logo" 
-                width={225} 
-                height={60}
+                fill
+                style={{ objectFit: 'contain' }}
                 className="transition-all duration-300 hover:opacity-90"
               />
             </Link>
@@ -72,59 +72,61 @@ const Header = () => {
                 </Link>
                 <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="py-1">
-                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <Link href="/company/about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       About Us
                     </Link>
-                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <Link href="/company/leadership" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       Leadership Team
                     </Link>
-                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <Link href="/company/mission" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       Mission & Vision
                     </Link>
                   </div>
                 </div>
               </li>
               <li className="group relative">
-                <Link href="#" className="text-gray-800 hover:text-red-600 font-medium transition-colors duration-300 flex items-center">
-                  SAP Center of Excellence
+                <Link href="/services" className="text-gray-800 hover:text-red-600 font-medium transition-colors duration-300 flex items-center">
+                  Our Services
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-4 w-4 ml-1">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </Link>
                 <div className="absolute left-0 mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="py-1">
-                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                      SAP Services
+                    <Link href="/services/consulting" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Consulting
                     </Link>
-                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                      SAP Specialised Services
+                    <Link href="/services/enterprise-applications" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Enterprise Applications
                     </Link>
-                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                      SAP Staffing Services
+                    <Link href="/services/data-analytics" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Data & Analytics
                     </Link>
-                  </div>
-                </div>
-              </li>
-              <li className="group relative">
-                <Link href="#" className="text-gray-800 hover:text-red-600 font-medium transition-colors duration-300 flex items-center">
-                  IT Services
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-4 w-4 ml-1">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Link>
-                <div className="absolute left-0 mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <div className="py-1">
-                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                      Web Development & Design
+                    <Link href="/services/intelligent-automation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Intelligent Automation & AI
                     </Link>
-                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                      Technology Consulting
+                    <Link href="/services/business-process-outsourcing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Business Process Outsourcing
+                    </Link>
+                    <Link href="/services/intelligent-marketing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Intelligent Marketing
+                    </Link>
+                    <Link href="/services/sap-center-of-excellence" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      SAP Center of Excellence
                     </Link>
                   </div>
                 </div>
               </li>
               <li>
-                <Link href="#" className="bg-red-600 hover:bg-orange-500 text-white font-semibold py-2 px-4 rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                <Link href="/careers" className="text-gray-800 hover:text-red-600 font-medium transition-colors duration-300">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="bg-red-600 hover:bg-orange-500 text-white font-semibold py-2 px-4 rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                >
                   Contact Us
                 </Link>
               </li>
@@ -150,7 +152,7 @@ const Header = () => {
                 <ul className="pl-4 space-y-2">
                   <li>
                     <Link 
-                      href="#" 
+                      href="/company/about" 
                       className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -159,7 +161,7 @@ const Header = () => {
                   </li>
                   <li>
                     <Link 
-                      href="#" 
+                      href="/company/leadership" 
                       className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -168,7 +170,7 @@ const Header = () => {
                   </li>
                   <li>
                     <Link 
-                      href="#" 
+                      href="/company/mission" 
                       className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -178,65 +180,87 @@ const Header = () => {
                 </ul>
               </li>
               <li>
-                <div className="block text-gray-800 font-medium mb-2">SAP Center of Excellence</div>
+                <div className="block text-gray-800 font-medium mb-2">Our Services</div>
                 <ul className="pl-4 space-y-2">
                   <li>
                     <Link 
-                      href="#" 
+                      href="/services/consulting" 
                       className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      SAP Services
+                      Consulting
                     </Link>
                   </li>
                   <li>
                     <Link 
-                      href="#" 
+                      href="/services/enterprise-applications" 
                       className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      SAP Specialised Services
+                      Enterprise Applications
                     </Link>
                   </li>
                   <li>
                     <Link 
-                      href="#" 
+                      href="/services/data-analytics" 
                       className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      SAP Staffing Services
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <div className="block text-gray-800 font-medium mb-2">IT Services</div>
-                <ul className="pl-4 space-y-2">
-                  <li>
-                    <Link 
-                      href="#" 
-                      className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Web Development & Design
+                      Data & Analytics
                     </Link>
                   </li>
                   <li>
                     <Link 
-                      href="#" 
+                      href="/services/intelligent-automation" 
                       className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Technology Consulting
+                      Intelligent Automation & AI
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/services/business-process-outsourcing" 
+                      className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Business Process Outsourcing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/services/intelligent-marketing" 
+                      className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Intelligent Marketing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/services/sap-center-of-excellence" 
+                      className="block text-gray-700 hover:text-red-600 transition-colors duration-300"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      SAP Center of Excellence
                     </Link>
                   </li>
                 </ul>
               </li>
               <li>
                 <Link 
-                  href="#" 
-                  className="inline-block bg-red-600 hover:bg-orange-500 text-white font-semibold py-2 px-4 rounded-md transition-all duration-300"
+                  href="/careers" 
+                  className="block text-gray-800 hover:text-red-600 font-medium transition-colors duration-300"
                   onClick={() => setMobileMenuOpen(false)}
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className="inline-block bg-red-600 hover:bg-orange-500 text-white font-semibold py-2 px-4 rounded-md transition-all duration-300"
                 >
                   Contact Us
                 </Link>

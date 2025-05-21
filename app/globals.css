@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import './styles/gray-background.css';
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +13,12 @@
   --gray: #888;
   --lgray: #e7e7e7;
   --black: #333;
+  --bg-gray: #f5f5f5;
+  --bg-gray-100: #f3f4f6;
+  --bg-gray-50: #f9fafb;
+  --bg-gray-dark: #4b5563;
+  --bg-gray-darker: #374151;
+  --bg-red: #fff5f5;
 }
 
 body {
@@ -21,7 +28,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--bg-gray-50);
+  @apply flex flex-col min-h-screen;
+}
+
+main {
+  @apply flex-grow;
 }
 
 a {
@@ -175,7 +187,11 @@ h6 {
 }
 
 .section-gap:nth-child(odd) {
-  background: #f5f5f5;
+  background: var(--bg-gray-50);
+}
+
+.section-gap:nth-child(even) {
+  background: var(--bg-gray-100);
 }
 
 /* Button Styles */
@@ -206,4 +222,66 @@ h6 {
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Utility Classes */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Theme transition */
+.transition-theme {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Add this at the end of the file to ensure proper spacing when header becomes fixed */
+.fixed + main {
+  padding-top: 72px; /* Adjust this value to match your header height */
+}
+
+/* Service Page Styles */
+.service-section {
+  background: var(--bg-gray-50);
+  padding: 4rem 0;
+}
+
+.service-section:nth-child(even) {
+  background: var(--bg-gray-100);
+}
+
+.service-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: var(--gray);
+  line-height: 1.6;
 }
