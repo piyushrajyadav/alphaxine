@@ -114,5 +114,5 @@ The site can be deployed to any hosting service that supports Next.js applicatio
 
 ---
 
-© 2023 Alphaxine. All rights reserved.
+© 2025 Alphaxine. All rights reserved.
 # alphaxine
