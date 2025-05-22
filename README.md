@@ -94,6 +94,7 @@ This project uses:
 - Framer Motion for animations
 - TypeScript
 - Heroicons SVG library
+- email JS
 
 ## Getting Started
 
